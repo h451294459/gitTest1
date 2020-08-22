@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="./jquery-1.11.3.js"></script>
+    <style>
+        li {
+            list-style: none;
+        }
+
+        .week-strong li {
+            list-style: none;
+            float: left;
+            color: #FFF;
+            background-color: #ddd;
+            height: 16px;
+            width: 60px;
+            text-align: center;
+            margin: 0px 10px;
+        }
+
+        .has-error .has-sucess {
+            overflow: hidden;
+        }
+
+        .week-strong {
+            /* margin-left: 200px; */
+            overflow: hidden;
+            /* height: 20px; */
+        }
+
+        .header ul {
+            float: right;
+        }
+
+        .header li {
+            float: left;
+            margin: 0px 10px;
+        }
+
+        .center-block {
+            margin: 0px 67px;
+            border-left: 1px solid #666;
+            border-right: 1px solid #666;
+            height: 486px;
+        }
+
+        form {
+            margin: 0px auto;
+            width: 500px;
+            height: 400px;
+
+        }
+
+        .header {
+            background-color: #999;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        img {
+            margin-left: 68px;
+        }
+
+        .center-block input {
+            height: 40px;
+            width: 280px;
+        }
+
+        .logo {
+            height: 94px;
+            padding: 20px 0px;
+        }
+
+        .logo span {
+            display: inline-block;
+            margin-left: 50px;
+        }
+
+        .btn {
+            height: 40px;
+            width: 280px;
+            background-color: #c62e2d;
+            
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="banxin">
+
+        <div class="header">
+            中午好，找到中意的书了吗？<a href="./signUp.html">请登录</a>
+            <a href="./signIn.html">免费注册</a>
+
+            <ul>
+                <li><a href=""> 我的学习</a></li>
+                <li><a href=""> 个人中心</a></li>
+                <li><a href=""> 我的订单</a></li>
+            </ul>
+        </div>
+        <div class="logo">
+            <img src="./logo-1.png" alt=""> <span>欢迎注册</span></div>
+        <div class="center-block">
+            <form class="form-horizontal " method="post" action="http://localhost:8888/signIn.php">
+                <div class="has-sucess">
+                    <div class="form-group">
+                        <label for="tell" class="col-sm-2 control-label">手机号码</label>
+                        <div class="col-sm-10">
+                            <input type="tell" class="form-control" id="tell" name="tell" placeholder="您的手机号码">
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">图片验证码</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputEmail3" placeholder="图片验证码">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">短信验证码</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputEmail3" placeholder="短信验证码">
+            </div>
+          </div> -->
+                <div class="has-sucess">
+                    <div class="form-group">
+                        <label for="password" class="col-sm-2 control-label">设置密码</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="设置密码">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-1 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <ul class="week-strong ">
+                                            <li class="ruo">弱</li>
+                                            <li class="zhong ">中</li>
+                                            <li class="qiang">强</li>
+                                        </ul>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="has-sucess">
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label">确认密码</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="inputPassword3" name="rePassword"
+                                        placeholder="确认密码">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default">立即注册</button>
+                            </div>
+                        </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        var arr = Array.from($("input"));
+        var index;
+        var bool=false;
+        if(!bool){
+                // console.log("12232")
+                $(".btn").attr("disabled",true);
+            }else{
+                bool=false; 
+            }   
+        //节流没做
+        //没有对按钮进行disable设置
+        $("input").on("click", function (e) {
+            index = arr.indexOf(this);
+            $(this).on("input", function () {
+                if (this == arr[0] || this == arr[1]) {
+                    if (testarr(this.value, index)) {
+                        // console.log($(this).eq(0));
+                        $(this).parent().parent().removeClass("has-error").addClass("has-sucess");
+                        // $(".btn").attr("disable",true);
+                        bool=true;
+                        // bool=false;
+                       if(index==1){
+                        //    console.log(typeof(arr[index].value));
+                        //    console.log(/[a-zA-Z]{2}/.test(arr[index].value));
+                          if(/[a-zA-Z]{2}/.test(arr[index].value)){
+                            $(".ruo").css("background-color","#DDDDDD");
+                            $(".zhong").css("background-color","#DDDDDD");
+                            $(".qiang").css("background-color","red"); 
+                           
+                          }else if(/[a-zA-Z]{1}/.test(arr[index].value)){
+                            $(".ruo").css("background-color","#DDDDDD");
+                            $(".zhong").css("background-color","red"); 
+                            $(".qiang").css("background-color","#DDDDDD"); 
+                          }else{
+                            $(".zhong").css("background-color","#DDDDDD");
+                            $(".qiang").css("background-color","#DDDDDD"); 
+                            $(".ruo").css("background-color","red");
+                          }
+
+                       }
+                    } else {
+                        $(this).parent().parent().removeClass("has-sucess").addClass("has-error");
+                        bool=false;
+                    }
+
+                } else if (this == arr[2]) {
+                    if (this.value == arr[1].value) {
+                        $(this).parent().parent().removeClass("has-error").addClass("has-sucess");
+                        bool=true;
+                    }
+                    else {
+                        $(this).parent().parent().removeClass("has-sucess").addClass("has-error");
+                        bool=false;
+                    }
+                   
+                } else {
+                    return;
+                }
+                if(!bool){
+                // console.log("12232")
+                $(".btn").attr("disabled",true);
+            }else{
+                bool=false; 
+            }    
+            });
+          
+        });
+       
+        function testarr(text, index) {
+            switch (index) {
+                case 0:
+                    return /^1\d{10}$/.test(text);
+                case 1:
+                    return /^[a-zA-Z0-9]{8,16}$/.test(text);
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <style>
+    .dropdown-menu {
+      display: block;
+    }
+
+    * {
+      margin: 0px auto;
+    }
+
+    li {
+      list-style: none;
+
+    }
+
+    a {
+      text-decoration: none;
+      color: #666666;
+    }
+
+    .header {
+      width: 1200px;
+      height: 30px;
+      line-height: 30px;
+    }
+
+    .headerleft {
+      float: left;
+    }
+
+    .header ul {
+      height: 30px;
+      line-height: 30px;
+      float: right;
+    }
+
+    .navbar-nav li {
+      margin: 0px 10px;
+    }
+
+    .logo {
+      padding-top: 20px;
+      width: 1200px;
+      height: 90px;
+    }
+
+    .logo-left {
+      float: right;
+    }
+
+    .logo-left .Search {
+      width: 440px;
+      border-color: #c63e3d;
+      height: 32px;
+    }
+
+    .btn {
+      margin-left: -5px;
+      width: 60px;
+      height: 32px;
+      background-color: #c63e3d;
+
+    }
+
+    .btn>.glyphicon {
+      color: white;
+    }
+
+    .shopping-Cart a {
+      height: 39px;
+      width: 135px;
+      line-height: 39px;
+      display: inline-block;
+      border: 1px solid #dddddd;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .glyphicon,
+    .num {
+      color: #c62e3d;
+    }
+
+    img {
+      width: 150px;
+      height: 51px;
+    }
+
+    .logo-nav>a {
+      height: 16px;
+      line-height: 16px;
+      margin: 0px;
+      height: 0px;
+    }
+
+    .logo-left .navbar-text {
+      /* float: left; */
+      margin-top: 0px;
+      color: #666;
+    }
+
+    .logo-left .navbar-text a {
+      text-decoration: none;
+      color: #bbb;
+    }
+
+    .shopping-nav {
+      height: 70px;
+      width: 1200px;
+      position: relative;
+
+    }
+
+    .shopping-nav .navbar-nav {
+      margin: 0px;
+      padding: 0px;
+      height: 60px;
+      text-align: center;
+      overflow: hidden;
+      padding-left: 184px;
+    }
+
+    .shopping-nav .navbar-nav li {
+      height: 40px;
+      /* line-height:80px ; */
+      width: 78px;
+
+    }
+
+    .shopping-nav .navbar-nav li a {
+      text-decoration: none;
+      line-height: 80px;
+      padding: 0px;
+      margin: 0px;
+    }
+
+    .side-nav {
+      height: 560px;
+      width: 185px;
+      background-color: #84685e;
+      position: absolute;
+      top: 40px;
+      font-size: 14px;
+      opacity: 0.6;
+      color: #ffffff;
+    }
+
+    .glyphicon-th-list {
+      color: #ffffff;
+    }
+
+    .side-nav-one {
+      height: 40px;
+      /* text-align: center; */
+      padding-left: 20px;
+      line-height: 40px;
+    }
+
+    .side-nav-two {
+      height: 50px;
+      
+      padding-left: 20px;
+    }
+    /* .side-nav-three {
+      height: 50px;
+      
+      padding-left: 20px;
+    } */
+    .side-nav-two ul {
+      padding: 0px;
+      margin: 0px;
+      height: 21px;
+      width: 162px;
+      margin-left: -10px;
+    }
+
+    .side-nav-twoul li {
+      float: left;
+      height: 21px;
+      margin-left: 10px;
+     
+    }
+
+    .side-nav-twoul span  {
+      font-size: 14px;
+      text-align: center;
+    }
+    .side-nav-twoul li a{
+      font-size: 12px;
+      color: #fff;
+    }
+    .side-nav-three{
+      height: 35px;
+      padding-left: 20px;
+    }
+
+    .Secondary-one{
+      height:250px;
+      width:700px;
+     background-color: red;
+     position: absolute;
+     left: 187px;
+     top: 80px;
+    }
+    .Secondary-onediv{
+      width: 640px;
+      height: 50px;
+      padding-left: 10px;
+      margin: 0px 10px; 
+    }
+    .Secondary-two{
+      height:250px;
+      width:700px;
+     background-color: blue;
+     position: absolute;
+     left: 187px;
+     top: 130px;
+    }
+    .Secondary-twodiv{
+      width: 640px;
+      height: 50px;
+      padding-left: 10px;
+      margin: 0px 10px; 
+    }
+    .Secondary-three{
+      height:200px;
+      width:700px;
+     background-color: yellow;
+     position: absolute;
+     left: 187px;
+     top: 105px;
+    }
+    .Secondary-threediv{
+      width: 640px;
+      height: 50px;
+      padding-left: 10px;
+      margin: 0px 10px; 
+    }
+    .Secondary-four{
+      height:276px;
+      width:700px;
+     background-color: black;
+     position: absolute;
+     left: 187px;
+     top: 117px;
+    }
+    .Secondary-fourdiv{
+      width: 640px;
+      height: 50px;
+      padding-left: 10px;
+      margin: 0px 10px; 
+    }
+    .Secondary-five{
+      height:200px;
+      width:700px;
+     background-color: orangered;
+     position: absolute;
+     left: 187px;
+     top: 205px;
+    }
+    .Secondary-fivediv{
+      width: 640px;
+      height: 50px;
+      padding-left: 10px;
+      margin: 0px 10px; 
+    }
+    .Secondary-six{
+      height:352px;
+      width:700px;
+     background-color: brown;
+     position: absolute;
+     left: 187px;
+     top: 180px;
+    }
+    .Secondary-sixdiv{
+      width: 640px;
+      height: 50px;
+      padding-left: 10px;
+      margin: 0px 10px; 
+    }
+    .Secondary-seven{
+      height:200px;
+      width:700px;
+     background-color: yellowgreen;
+     position: absolute;
+     left: 187px;
+     top: 255px;
+    }
+    .Secondary-sevendiv{
+      width: 640px;
+      height: 50px;
+      padding-left: 10px;
+      margin: 0px 10px; 
+    }
+    .Secondary-eight{
+      height:440px;
+      width:700px;
+     background-color: rebeccapurple;
+     position: absolute;
+     left: 187px;
+     top: 150px;
+    }
+    .Secondary-eightdiv{
+      width: 640px;
+      height: 50px;
+      padding-left: 10px;
+      margin: 0px 10px; 
+    }
+    .Secondary-nine{
+      height:150px;
+      width:700px;
+     background-color: blueviolet;
+     position: absolute;
+     left: 187px;
+     top: 405px;
+    }
+    .Secondary-ninediv{
+      width: 640px;
+      height: 50px;
+      padding-left: 10px;
+      margin: 0px 10px; 
+    }
+    .Secondary-ten{
+      height:150px;
+      width:700px;
+     background-color: brown;
+     position: absolute;
+     left: 187px;
+     top: 450px;
+    }
+    .Secondary-tendiv{
+      width: 640px;
+      height: 50px;
+      padding-left: 10px;
+      margin: 0px 10px; 
+    }
+    .Secondary-eleven{
+      height:150px;
+      width:700px;
+     /* background-color: wheat; */
+     position: absolute;
+     left: 187px;
+     top: 450px;
+    }
+    .Secondary-elevendiv{
+      width: 640px;
+      height: 50px;
+      padding-left: 10px;
+      margin: 0px 10px; 
+    }
+    
+    
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <div class="headerleft">
+      中午好，找到中意的书了吗？<a href="./signUp.html">请登录</a>
+      <a href="./signIn.html">免费注册</a>
+    </div>
+    <ul class="navbar-nav">
+      <li><a href=""> 我的学习</a></li>
+      <li><a href=""> 个人中心</a></li>
+      <li><a href=""> 我的订单</a></li>
+      <li><a href=""> 客户服务</a></li>
+      <li><a href=""> 手机新华</a></li>
+    </ul>
+  </div>
+  <div class="logo">
+    <img src="./logo-1.png" alt="">
+    <div class="logo-left">
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control Search" placeholder="人间草木">
+        </div>
+        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span>
+        </button>
+      </form>
+      <span class="shopping-Cart"> <a href=""><span class="glyphicon glyphicon-shopping-cart"></span> 购物车<span
+            class="num">0</span> 件 ></a></span>
+      <br>
+      <p class="navbar-text">热门搜索
+        <a href="">人间草木</a>
+        <a href="">山海经</a>
+        <a href="">时间简史</a>
+        <a href="">我们的身体</a>
+        <a href="">24史</a></p>
+    </div>
+  </div>
+  <div class="shopping-nav">
+    <ul class="navbar-nav">
+      <li><a href=""> 商城首页</a></li>
+      <li><a href=""> 人文社区</a></li>
+      <li><a href=""> 党政专区</a></li>
+      <li><a href=""> 中版书房</a></li>
+      <li><a href=""> 童书馆</a></li>
+      <li><a href=""> 教材教辅</a></li>
+      <li><a href=""> 新华教育</a></li>
+      <li><a href=""> 新华优选</a></li>
+      <li><a href=""> 新华定制</a></li>
+      <li><a href=""> 电子书</a></li>
+    </ul>
+    <div class="side-nav">
+      <div class="side-nav-one">
+        <p><span class="glyphicon glyphicon-th-list"></span> &nbsp; 全部商品分类</p>
+      </div>
+      <div class="side-nav-two ">
+        <span>文学艺术<span>
+            <ul class="side-nav-twoul">
+              <li><a href="">小说</a>
+              </li>
+              <li> <a href="">文字</a> </li>
+              <li><a href="">艺术</a></li>
+              <li> <a href="">传记</a></li>
+            </ul>
+      </div>
+      <div class="side-nav-two"><span>人文社科</span>
+        <ul class="side-nav-twoul">
+          <li><a href="">历史</a>
+          </li>
+          <li> <a href="">哲学宗教</a> </li>
+          <li><a href="">心理</a></li>
+        </ul></div>
+        <div class="side-nav-two"><span>少儿童书</span>
+          <ul class="side-nav-twoul">
+            <li><a href="">儿童文学</a>
+            </li>
+            <li> <a href="">科普百科</a> </li>
+            
+          </ul></div>
+          <div class="side-nav-two"><span>教育考试</span>
+            <ul class="side-nav-twoul">
+              <li><a href="">中小教辅</a>
+              </li>
+              <li> <a href="">外语学习</a> </li>
+            </ul>
+          </div>
+            <div class="side-nav-two"><span>经济金融</span>
+              <ul class="side-nav-twoul">
+                <li><a href="">管理</a>
+                </li>
+                <li> <a href="">休闲</a> </li>
+                <li> <a href="">金融会计</a> </li>
+              </ul>
+            </div>
+              <div class="side-nav-two">
+                <span>生活休闲</span>
+                <ul class="side-nav-twoul">
+                  <li><a href="">烹饪美食</a> </li>
+                  <li> <a href="">育儿早教</a> </li>
+                </ul>
+              </div>
+              <div class="side-nav-two">
+                <span>科学技术</span>
+                <ul class="side-nav-twoul">
+                  <li><a href="">工业科技</a> </li>
+                  <li> <a href="">建筑</a> </li>
+                  <li> <a href="">医学</a> </li>
+                </ul>
+              </div>
+              <div class="side-nav-three">
+                <span>电子书</span>
+              </div>
+              <div class="side-nav-three">
+                <span>新华定制</span>
+              </div>
+              <div class="side-nav-two">
+                <span>3C电器</span>
+                <ul class="side-nav-twoul">
+                  <li><a href="">精准扶贫</a> </li>
+                  <li> <a href="">省店推荐</a> </li>
+                </ul>
+              </div>
+              
+              <div class="side-nav-two">
+                <span>家居日用</span>
+                <ul class="side-nav-twoul">
+                  <li><a href="">学习办公</a> </li>
+                  <li> <a href="">玩具益智</a> </li>
+                </ul>
+              </div>
+    </div>
+    <div class="Secondary-one">
+      <div class="Secondary-onediv">
+        <span></span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div class="Secondary-two">
+      <div class="Secondary-twodiv">
+        <span></span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="Secondary-three">
+      <div class="Secondary-threediv">
+        <span></span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="Secondary-four">
+      <div class="Secondary-fourdiv">
+        <span></span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div class="Secondary-five">
+      <div class="Secondary-fivediv">
+        <span></span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div class="Secondary-six">
+      <div class="Secondary-sixdiv">
+        <span></span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div class="Secondary-seven">
+      <div class="Secondary-sevendiv">
+        <span></span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div class="Secondary-eight">
+      <div class="Secondary-eightdiv">
+        <span></span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div class="Secondary-nine">
+      <div class="Secondary-ninediv">
+        <span></span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div class="Secondary-ten">
+      <div class="Secondary-tendiv">
+        <span></span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div class="Secondary-eleven">
+      <div class="Secondary-elevendiv">
+        <span></span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+</body>
+
+</html>
