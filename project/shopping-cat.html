@@ -353,9 +353,9 @@
       height: 50px;
       padding-left: 10px;
       margin: 0px 10px;
-    }
+    }j
 
-    j .Secondary-j {
+    .Secondary-j {
       height: 150px;
       width: 700px;
       /* background-color: wheat; */
@@ -434,8 +434,7 @@
       border-radius: 50%;
       background-color: red;
     }
-
-    .banneranniu {
+    .banneranniu{
       display: none;
       font-size: 30px;
       width: 41px;
@@ -443,42 +442,36 @@
       line-height: 69px;
       text-align: center;
       color: white;
-      background-color: #84685e;
+      background-color:#84685e; 
       opacity: 0.6;
       position: absolute;
       z-index: 11111111111111199999999999;
     }
-
-    .banneranniu-left {
-      top: 0;
+    .banneranniu-left{
+      top:0;
       bottom: 0px;
       left: 0px;
       margin: auto;
-
+      
     }
-
-    .banneranniu-right {
-      top: 0;
+   .banneranniu-right{
+      top:0;
       bottom: 0px;
       right: 0px;
       margin: auto;
     }
-
-    .p-party {
-      height: 345px;
+    .p-party{
+      height: 275px;
       width: 1200px;
-      overflow: hidden;
     }
-
-    .p-party>p {
+    .p-party>p{
       height: 59px;
       font-family: '微软雅黑';
       font-size: 20px;
       line-height: 59px;
       text-indent: 40px;
     }
-
-    .p-party>ul li {
+    .p-party>ul li{
       float: left;
       height: 258px;
       width: 170px;
@@ -487,14 +480,11 @@
       margin: 8px;
       background-color: rebeccapurple;
     }
-
-    .p-party>ul li img {
-
-      height: 160px;
-      width: 144px;
+    .p-party>ul li img{
+    height:  160px;
+    width: 144px ;
     }
-
-    .p-party span {
+    .p-party span{
       display: block;
       width: 144px;
       height: 80px;
@@ -504,6 +494,41 @@
       line-height: 14px;
       font-weight: 400px;
     }
+
+    /* 2页面购物车部分css样式 */
+    .goods{
+      padding: 24px;
+      height: 502px;
+      width:1136px;
+      position: relative;
+    }
+     .littleBox,.bigBox{
+      height: 375px;
+      widows: 375px;
+      position: relative;
+
+    }
+    .littleBox{
+      top: 0px;
+      left: 0px;
+    }
+    .bigBox{
+      top: 0px;
+      left: 375px;
+      overflow: hidden;
+    }
+    .bigBox img{
+      height: 750px;
+      width: 750px;
+      position: absolute;
+    }
+    .loupe{
+      height: 185px;
+      width: 185px;
+      position:absolute;
+      
+    }
+    
   </style>
 </head>
 
@@ -749,189 +774,86 @@
         </ul>
       </div>
     </div>
+  </div>
+  <!-- 2界面html -->
+  <div class="goods">
+    <div class="littleBox">
+    <img src="" alt="" id="littleImg">
+    <div class="loupe"></div>
+    <div class="bigBox">
+      <img src="" alt="">
+    </div>
+  </div>
 
-    <!-- <div class="eve-col-cu" style="width:100%;height:480px;background-image:url(https://img4.xinhuashudian.com/images/2020/08/19/1bc3c16e-0bab-438c-bbe1-43dc01072ce0.png);background-position:50% 50%;"></div> -->
 
   </div>
-  <div class="banner">
-    <div class="banneranniu banneranniu-right">></div>
-    <div class="banneranniu banneranniu-left">
-      < </div>
-        <div class="box">
-          <a href="#"><img src="./banner-7.png" alt=""></a>
-          <a href="#"> <img src="./banner-1.png" alt=""></a>
-          <a href="#"> <img src="./banner-2.png" alt=""></a>
-          <a href="#"><img src="./banner-3.png" alt=""></a>
-          <a href="#"><img src="./banner-4.png" alt=""></a>
-          <a href="#"><img src="./banner-5.png" alt=""></a>
-          <a href="#"><img src="./banner-6.png" alt=""></a>
-          <a href="#"><img src="./banner-7.png" alt=""></a>
-          <a href="#"> <img src="./banner-1.png" alt=""></a>
-
-        </div>
-        <ul class="index">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-    </div>
-    <div class="p-party">
-      <p>政党精选</p>
-      <ul>
-      </ul>
-    </div>
+    
 </body>
 <script>
-  window.onload = function () {
-    //轮播图
-    var arr = $(".index li");
-    var index;
-    var j = 0;
-    //左侧导航栏
-    sideNav()
-    function sideNav() {
-      let sideindex;
-      let sideindexString;
-      $(".ceshi").on({
-        "mouseenter": function () {
-          sideindex = $(".ceshi").index($(this)) - 0 + 1;
-          console.log(sideindex);
-          sideindexString = "." + "Secondary-" + String.fromCharCode(0x60 + sideindex);
-          console.log(sideindexString);
-          $(sideindexString).css("display", "block");
-        },
-        "mouseleave": function () {
-          $(sideindexString).css("display", "none");
-        }
-      })
-    }
-
-    //轮播图实现
-    banner();
-    $(arr).eq(j).css("background-color", "yellow");
-    $(".banner").on({
-      "mouseenter": function () {
-        console.log(j);
-        clearInterval(index);
-        $(".banneranniu").css("display", "block");
-        $(".banneranniu-left").click(function () {
-          j--;
-         
-          console.log(j);
-          
-          change();
-          if (j < 0) j += 7;
-
-          
-        })
-        $(".banneranniu-right").click(function () {
-          j++;
-          change();
-          if (j > 6) j = j % 7;
-
-        })
-      },
-      "mouseleave": function () {
-        banner();
-        $(".banneranniu").css("display", "none");
-        // $(".banner").mouseenter=null;
-        $('.banneranniu').unbind("click");
-      }
-    })
-    $(arr).on({
-      "mouseenter": function () {
-        $(this).css("background-color", 'yellow');
-        j = $(arr).index($(this));
-        change();
-      },
-    })
-
-    //json数据加载
-    var arrClick = [];
-    $.ajax({
-      type: "get",
-      url: "http://localhost:8888/index.json",
-      success: function (arr) {
-        var str = ``;
-        $.each(arr, function (index, value) {
-          // 
-          //  arrClick[index].id=value.id;
-
-          str += `<li id="${value.id}">
+  //获取json中的数据进行数据加载
+ var obj=JSON.parse($.cookie("chooseRead"));
+ console.log(obj);
+ if($.cookie("shoppingcount")){
+       var count;
+       arrClick=JSON.parse($.cookie("shoppingcount"));
+       $.each(arr,function(index,value){
+       count+=value.item;
+       })
+       $(".num").html(count);
+     }else{
        
-        </br>
-        <a href="http://localhost:8888/shopping-cat.html"><img src="${value.mainImage}" alt=""></a>
-        <span>${value.name}</span>
-      </li>`;
-        })
-        $(".p-party ul").html(str);
-        $(".p-party").on("click", "li", eventDelegate);
+     }
+ $.ajax({
+   type:"get",
+   url:"http://localhost:8888/index.json",
+   success(arr){
+     $.each(arr,function(index,value){
+      if(arr[index].id==obj.id){
 
-      },
-      error: function (msg) {
-        console.log(msg);
       }
-    })
-    //购物车 物品数量
-    if ($.cookie("shoppingcount")) {
-      var count;
-      arrClick = JSON.parse($.cookie("shoppingcount"));
-      $.each(arr, function (index, value) {
-        count += value.item;
-      })
-      $(".num").html(count);
-    }
+     })
+   }
+ })
 
 
-    // 事件委托
-    function eventDelegate() {
-      console.log( $(this).attr("id"));
-      var  arrClickRead = { id: $(this).attr("id") };
-      console.log(JSON.stringify(arrClickRead));
-      //  arrClick[$(".p-party ul").index($this)].item+=1;
-      $.cookie("chooseRead", JSON.stringify(arrClickRead),
-        {
-          expires: 7
-        });
-    }
-    //点击左右按钮
-    function banner() {
-      index = setInterval(() => {
-        j++;
-        change();
-      }, 2000);
-    }
-    //改变轮播图样式
-    function change() {
-      $(arr).not(":eq(j)").css("background-color", "red");
-      $(arr).eq(j).css("background-color", "yellow");
-      // $(".box").css("left", `${-j * 1519 - 1519}` + `px`);
-      // console.log(j);
-     
-      $(".box").stop().animate({
-        "left": `${-j * 1519 - 1519}` + `px`
-      }, 500);
-      if(j==7){
-        j=j%7;
-        $(arr).not(":eq(j)").css("background-color", "red");
-      $(arr).eq(j).css("background-color", "yellow");
-        $(".box").animate({
-        "left": `${-j * 1519 - 1519}` + `px`
-      }, 0);
-      
-      }else if(j<0){
-        j+=7;
-        $(arr).not(":eq(j)").css("background-color", "red");
-      $(arr).eq(j).css("background-color", "yellow");
-        $(".box").animate({
-        "left": `${-j * 1519 - 1519}` + `px`
-      }, 0);
-      }
-    }
+
+
+
+
+    sideNav();
+    $(".side-nav>div").not(".side-nav-one").hide();
+    $(".side-nav").css("height", "40px");
+    $(".side-nav").on({"mouseenter":function () {
+        $(".side-nav div").show();
+        $(".side-nav").stop().animate({
+            "height":"560px"
+        },300)
+        // $(".side-nav").css("height", "560px");
+    },
+    "mouseleave":function () {
+        $(".side-nav>div").not(".side-nav-one").hide();
+        $(".side-nav").stop().animate({
+            "height":"40px"
+        },200)
+    } 
+})
+
+    function sideNav(){
+  let sideindex;
+  let sideindexString;
+  $(".ceshi").on({
+    "mouseenter":function(){
+    sideindex=$(".ceshi").index($(this))-0+1;
+    console.log(sideindex);
+     sideindexString= "."+"Secondary-"+String.fromCharCode(0x60+sideindex);
+     console.log(sideindexString);
+   $(sideindexString).css("display","block");
+  },
+  "mouseleave":function(){
+    $(sideindexString).css("display","none");
   }
+  })
+}
 </script>
 
 </html>

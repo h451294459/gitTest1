@@ -14,13 +14,8 @@ function open_sql(){
         $arr = mysqli_fetch_assoc($res);
         if ($arr["password"] === $_POST["password"]) {
             echo "<script>
-           $.ajax({
-               type:get,
-               url:='http://localhost:8888/index.html&id=$_POST[tell]',
-               success：functiom(){
-                localhost.href=`http://localhost:8888/index.html&id=$_POST[tell]`
-               }
-           })
+                localhost.href=`http://localhost:8888/index.html`
+                $.cookie('name',$_POST[tell])
          </script>";
         } else {
             echo "密码错误";
