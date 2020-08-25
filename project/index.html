@@ -394,6 +394,7 @@
       height: 380px;
       width: 100%;
       position: relative;
+      overflow: hidden;
     }
 
     .banner .box {
@@ -465,7 +466,7 @@
     }
 
     .p-party {
-      height: 345px;
+      height: 690px;
       width: 1200px;
       overflow: hidden;
     }
@@ -824,8 +825,6 @@
           
           change();
           if (j < 0) j += 7;
-
-          
         })
         $(".banneranniu-right").click(function () {
           j++;
@@ -859,7 +858,9 @@
         $.each(arr, function (index, value) {
           // 
           //  arrClick[index].id=value.id;
-
+          // $.cookie("shoppingcount",JSON.stringify([{id:value.id,item:5}]),{
+          //   expires:7
+          // });
           str += `<li id="${value.id}">
        
         </br>
@@ -869,26 +870,31 @@
         })
         $(".p-party ul").html(str);
         $(".p-party").on("click", "li", eventDelegate);
-
+        
       },
       error: function (msg) {
         console.log(msg);
       }
     })
     //购物车 物品数量
+    
     if ($.cookie("shoppingcount")) {
-      var count;
+      var count=0;
       arrClick = JSON.parse($.cookie("shoppingcount"));
-      $.each(arr, function (index, value) {
-        count += value.item;
+    //  console.log(JSON.parse($.cookie("shoppingcount")));
+     console.log(arrClick);
+      $.each(arrClick, function (index, value) {
+        console.log(value.item);
+        count += (value.item-0);
       })
+   console.log(count);
       $(".num").html(count);
     }
 
 
     // 事件委托
     function eventDelegate() {
-      console.log( $(this).attr("id"));
+      // console.log( $(this).attr("id"));
       var  arrClickRead = { id: $(this).attr("id") };
       console.log(JSON.stringify(arrClickRead));
       //  arrClick[$(".p-party ul").index($this)].item+=1;
@@ -908,9 +914,6 @@
     function change() {
       $(arr).not(":eq(j)").css("background-color", "red");
       $(arr).eq(j).css("background-color", "yellow");
-      // $(".box").css("left", `${-j * 1519 - 1519}` + `px`);
-      // console.log(j);
-     
       $(".box").stop().animate({
         "left": `${-j * 1519 - 1519}` + `px`
       }, 500);
