@@ -7,7 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <script src="./jquery-1.11.3.js"></script>
-    <style>
+    <link rel="stylesheet" href="./signIn.css">
+    <script src="signIn.js" async></script>
+    <!-- <style>
         li {
             list-style: none;
         }
@@ -85,10 +87,9 @@
             height: 40px;
             width: 280px;
             background-color: #c62e2d;
-            
-        }
 
-    </style>
+        }
+    </style> -->
 </head>
 
 <body>
@@ -107,7 +108,7 @@
         <div class="logo">
             <img src="./logo-1.png" alt=""> <span>欢迎注册</span></div>
         <div class="center-block">
-            <form class="form-horizontal " method="post" action="http://localhost:8888/signIn.php">
+            <form class="form-horizontal " method="post" action="http://10.30.156.215:8888/signIn.php">
                 <div class="has-sucess">
                     <div class="form-group">
                         <label for="tell" class="col-sm-2 control-label">手机号码</label>
@@ -116,18 +117,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">图片验证码</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" id="inputEmail3" placeholder="图片验证码">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">短信验证码</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" id="inputEmail3" placeholder="短信验证码">
-            </div>
-          </div> -->
                 <div class="has-sucess">
                     <div class="form-group">
                         <label for="password" class="col-sm-2 control-label">设置密码</label>
@@ -169,16 +158,16 @@
             </form>
         </div>
     </div>
-    <script>
+    <!-- <script>
         var arr = Array.from($("input"));
         var index;
-        var bool=false;
-        if(!bool){
-                // console.log("12232")
-                $(".btn").attr("disabled",true);
-            }else{
-                bool=false; 
-            }   
+        var bool = false;
+        if (!bool) {
+            // console.log("12232")
+            $(".btn").attr("disabled", true);
+        } else {
+            bool = false;
+        }
         //节流没做
         //没有对按钮进行disable设置
         $("input").on("click", function (e) {
@@ -186,58 +175,57 @@
             $(this).on("input", function () {
                 if (this == arr[0] || this == arr[1]) {
                     if (testarr(this.value, index)) {
-                        // console.log($(this).eq(0));
                         $(this).parent().parent().removeClass("has-error").addClass("has-sucess");
-                        // $(".btn").attr("disable",true);
-                        bool=true;
-                        // bool=false;
-                       if(index==1){
-                        //    console.log(typeof(arr[index].value));
-                        //    console.log(/[a-zA-Z]{2}/.test(arr[index].value));
-                          if(/[a-zA-Z]{2}/.test(arr[index].value)){
-                            $(".ruo").css("background-color","#DDDDDD");
-                            $(".zhong").css("background-color","#DDDDDD");
-                            $(".qiang").css("background-color","red"); 
-                           
-                          }else if(/[a-zA-Z]{1}/.test(arr[index].value)){
-                            $(".ruo").css("background-color","#DDDDDD");
-                            $(".zhong").css("background-color","red"); 
-                            $(".qiang").css("background-color","#DDDDDD"); 
-                          }else{
-                            $(".zhong").css("background-color","#DDDDDD");
-                            $(".qiang").css("background-color","#DDDDDD"); 
-                            $(".ruo").css("background-color","red");
-                          }
+                        bool = true;
 
-                       }
+                        if (index == 1) {
+                            //    console.log(typeof(arr[index].value));
+                            //    console.log(/[a-zA-Z]{2}/.test(arr[index].value));
+                            if (/[a-zA-Z]{2}/.test(arr[index].value)) {
+                                $(".ruo").css("background-color", "#DDDDDD");
+                                $(".zhong").css("background-color", "#DDDDDD");
+                                $(".qiang").css("background-color", "red");
+
+                            } else if (/[a-zA-Z]{1}/.test(arr[index].value)) {
+                                $(".ruo").css("background-color", "#DDDDDD");
+                                $(".zhong").css("background-color", "red");
+                                $(".qiang").css("background-color", "#DDDDDD");
+                            } else {
+                                $(".zhong").css("background-color", "#DDDDDD");
+                                $(".qiang").css("background-color", "#DDDDDD");
+                                $(".ruo").css("background-color", "red");
+                            }
+
+                        }
                     } else {
                         $(this).parent().parent().removeClass("has-sucess").addClass("has-error");
-                        bool=false;
+                        bool = false;
                     }
 
                 } else if (this == arr[2]) {
                     if (this.value == arr[1].value) {
                         $(this).parent().parent().removeClass("has-error").addClass("has-sucess");
-                        bool=true;
+                        bool = true;
                     }
                     else {
                         $(this).parent().parent().removeClass("has-sucess").addClass("has-error");
-                        bool=false;
+                        bool = false;
                     }
-                   
+
                 } else {
                     return;
                 }
-                if(!bool){
-                // console.log("12232")
-                $(".btn").attr("disabled",true);
-            }else{
-                bool=false; 
-            }    
+                if (!bool) {
+
+                    $(".btn").attr("disabled", true);
+                } else {
+                    $(".btn").attr("disabled", false);
+                    bool = false;
+                }
             });
-          
+
         });
-       
+
         function testarr(text, index) {
             switch (index) {
                 case 0:
@@ -246,7 +234,7 @@
                     return /^[a-zA-Z0-9]{8,16}$/.test(text);
             }
         }
-    </script>
+    </script> -->
 </body>
 
 </html>

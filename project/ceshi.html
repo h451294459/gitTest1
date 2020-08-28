@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ forEach=function (arr,fn) {
+    for(var i=0,l=arr.length;i<l;i++){
+        var c=arr[i];
+        if(fn.call(c,i,c)===false){
+            return false;
+        }
+    }
+};
+function box1(index,num) {
+    console.log(index,num);
+}
+var arr=[10,9,8,7,6,5,4];
+forEach(arr,box1)
+    </script>
+</body>
+</html>

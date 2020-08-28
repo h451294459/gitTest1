@@ -7,7 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <script src="./jquery-1.11.3.js"></script>
-    <style>
+    <link rel="stylesheet" href="./signUp.scss">
+    <!-- <script src="./signUp.js" async=" async"></script> -->
+    <!-- <style>
         .header {
             height: 95px;
             width: 100%;
@@ -132,7 +134,7 @@
     display: inline-block;
     vertical-align: middle;
     } */
-    </style>
+    </style> -->
 </head>
 
 
@@ -149,10 +151,10 @@
                 <li class="qksignIn"><a href="">短信登录</a></li>
 
             </ul>
-            <form  method="post" action="http://localhost:8888/signUp.php">
+            <form  method="post" action="http://10.30.156.215:8888/signUp.php">
                 <div class="form-group" >
 
-                    <input type="tel" class="form-control input1 middle" id="exampleInputEmail1" placeholder="手机号" name="tel">
+                    <input type="tell" class="form-control input1 middle" id="exampleInputEmail1" placeholder="手机号" name="tell">
                 </div>
                 <div class="error0">格式不正确</div>
                 <div class="form-group">
@@ -178,7 +180,7 @@
        var bool=false;
      
                 // console.log("12232")
-                $(".btn").attr("disabled",true);
+               
             
        //节流没做
        $("input").on("click",function(e){
@@ -190,20 +192,20 @@
                 if(index==0){
                     console.log(index);
                     $(".error0").css("display","none");
-                    bool=true;
+                   
                 }   else{
                     $(".error1").css("display","none");
-                    bool=true;
+                   
                 } 
             }else{
                 console.log(index);
                 if(index==0){
                     console.log(index);
                     $(".error0").css("display","block");
-                    bool=false;
+                   
                 }  else{
                     $(".error1").css("display","block");
-                    bool=false;
+                   
                 }                            
                 
         }
@@ -212,11 +214,7 @@
        }else{
         return;
        }
-       if(!bool){
-                $(".btn").attr("disabled",true);
-            }else{
-                bool=false; 
-            }   
+      
          
        });
       
@@ -225,9 +223,7 @@
             case 0:
             return /^1\d{10}$/.test(text);
           case 1:
-            return /^(?=\D+\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,16}$/.test(text
-            
-            );
+            return /^[a-zA-Z0-9]{8,16}$/.test(text);
             
         }
     }

@@ -14,7 +14,7 @@ function open_sql(){
     // $res->num_rows  表示查询到的结果有多少条
     if($res->num_rows>0){
         echo "<script>
-            location.href='http://127.0.0.1:8888/signUp.html';
+            location.href='http://10.30.156.215:8888/signIn.html';
             alert('用户名重复，请重新输入'); 
          </script>";
          return;
@@ -27,7 +27,7 @@ function open_sql(){
     if($result){
         
         echo "<script>
-            location.href='http://127.0.0.1:8888/signUp.html';
+            location.href='http://10.30.156.215:8888/signUp.html';
             alert('注册成功，请登录');
         </script>";
     }

@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.min.css">
   <script src="./jquery-1.11.3.js"></script>
   <script src="./jquery.cookie.js"></script>
-  <style>
+  <link rel="stylesheet" href="shopping-cat.scss">
+  <script src="./shopping-cart.js"></script>
+  <!-- <style>
     .dropdown-menu {
       display: block;
     }
@@ -608,7 +610,7 @@
       line-height: 42px;
       text-align: center;
     }
-   </style>
+   </style> -->
 </head>
 
 <body>
@@ -635,7 +637,7 @@
         <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span>
         </button>
       </form>
-      <span class="shopping-Cart"> <a href="http://localhost:8888/clearingcart.html"><span class="glyphicon glyphicon-shopping-cart"></span> 购物车<span
+      <span class="shopping-Cart"> <a href="http://10.30.156.215:8888/clearingcart.html"><span class="glyphicon glyphicon-shopping-cart"></span> 购物车<span
             class="num">0</span> 件 ></a></span>
       <br>
       <p class="navbar-text">热门搜索
@@ -886,9 +888,9 @@
 
  $.ajax({
    type:"get",
-   url:"http://localhost:8888/index.json",
+   url:"http://10.30.156.215:8888/index.json",
    success(arr){
-     $.each(arr,function(index,value){
+     $.each(arr,function(index,value){ 
       if(value.id==obj.id){
         console.log(value.id);
         var str= ``;
@@ -995,52 +997,7 @@
                 top: -2 * t
               })
         })
-        // mouseenter(function(){
-      //    $(".loupe").add(".bigBox").show();
-      //  }).mouseleave(function(){
-      //   $(".loupe").add(".bigBox").hide();
-      //   $(".littleBox").unbind("mousemove")
-      //  }).mousemove(function(e){
-      //           var l = e.clientX - $(this).offset().left - 97.5;
-      //           l = Math.max(l, 0);
-      //           l = Math.min(185, l);
-      //           var t = e.clientY - $(this).offset().top - 97.5;
-      //           t = Math.max(t, 0);
-      //           t = Math.min(185, t);
-      //         $(".loupe").css({
-      //           left: l,
-      //           top: t
-      //  })
-      //  $(".bigBox img").css({
-      //           left: -2 * l,
-      //           top: -2 * t
-      //         })
-      //       })
-          
-       
-      //  $(function(){
-      //       $("#small").mouseenter(function(){
-      //         $("#mark").add("#big").show();
-      //       }).mouseleave(function(){
-      //         $("#mark").add("#big").hide();
-      //       }).mousemove(function(ev){
-      //           var l = ev.clientX - $(this).offset().left - 100;
-      //           l = Math.max(l, 0);
-      //           l = Math.min(300, l);
-      //           var t = ev.clientY - $(this).offset().top - 100;
-      //           t = Math.max(t, 0);
-      //           t = Math.min(529, t);
-      //         $("#mark").css({
-      //           left: l,
-      //           top: t
-      //         })
-      //         //放大的图片，反方向对应倍数移动
-      //         $("#big img").css({
-      //           left: -2 * l,
-      //           top: -2 * t
-      //         })
-      //       })
-      //     })
+        
 
 
 
